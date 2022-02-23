@@ -1,0 +1,14 @@
+.button {
+  &[data-variation='styled'] {
+    background-color: purple;
+    width: 150px;
+    height: 50px;
+    padding: 10px 20px 10px 20px;
+    transition: background 0.22s;
+    color: white;
+    &:hover {
+      background-color: green;
+      transition: background 0.22s;
+    }
+  }
+}

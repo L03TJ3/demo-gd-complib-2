@@ -1,0 +1,35 @@
+{
+  "presets": [
+      ["@babel/preset-env", { "targets": "defaults"}],
+      ["@babel/preset-react",
+        {
+          "pragma": "dom",
+          "pragmaFrag": "DomFrag", 
+          "throwIfNamespace": false,
+          "runtime": "classic" 
+        }]
+    ],
+    "plugins": [
+      ["@babel/plugin-transform-classes"], 
+      ["react-native-web", { "commonjs": true }],
+      ["module-resolver", {
+        "alias": {"^react-native$": "react-native-web"}
+      }]
+    ]
+}
+
+// {
+//   "presets": ["@babel/preset-env", "@babel/preset-react"],
+//   "sourceMaps": true,
+//   "ast": false,
+//   "minified": false,
+//   "plugins": [
+//     [ "module-resolver",
+//       { "alias":{ "^react-native$" : "react-native-web" } }
+//     ],
+//     "@babel/plugin-proposal-class-properties",
+//     "@babel/plugin-proposal-export-default-from",
+//     "@babel/plugin-proposal-export-namespace-from",
+//     "@babel/plugin-proposal-object-rest-spread"
+//   ]
+// }
