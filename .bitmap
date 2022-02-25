@@ -9,6 +9,12 @@
  */
 
 {
+    "core/base-ui-package": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "demo-gd-base/core/base-ui-package"
+    },
     "core/ui/button": {
         "scope": "lewisb.demo-gd-base",
         "version": "0.0.1",
