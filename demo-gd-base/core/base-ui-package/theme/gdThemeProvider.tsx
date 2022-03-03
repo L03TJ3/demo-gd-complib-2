@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 // 1. Import the extendTheme function
 import { extendTheme, NativeBaseProvider } from 'native-base';
+
 // 2. Extend the theme to include custom colors, fonts, etc
 const newColorTheme = {
   brand: {
@@ -13,19 +14,37 @@ const newColorTheme = {
   },
 };
 
-export type gdThemeProviderProps = {
-  /**
-   * a node to be rendered in the special component.
-   */
-   childComponent?: ReactNode;
-};
 
-const theme = extendTheme({ colors: newColorTheme });
-// 3. Pass the `theme` prop to the `NativeBaseProvider`
-export default function GdThemeProvider({childComponent}: gdThemeProviderProps) {
+const gdTheme = extendTheme({ 
+  colors: newColorTheme,
+  components: {
+    Button: {
+      baseStyle: {
+        backgroundColor: newColorTheme.brand.gdBlue,
+        width: '150px',
+        height: '50px',
+        padding: '10px 20px 10px 20px',
+        transition: 'background 0.22s',
+        color: 'white',
+        border: '1px solid black',
+        borderRadius: '10px',
+        _hover: {
+          backgroundColor: newColorTheme.brand.gdBlueLight,
+          transition: 'background 0.22s',
+          cursor: 'pointer'
+        }
+      }
+    }
+  } 
+});
+
+export function GdThemeProvider(childComponent: JSX.Element) {
   return (
-    <NativeBaseProvider theme={theme}>
+    <NativeBaseProvider theme={gdTheme}>
       {childComponent}
     </NativeBaseProvider>
-  );
-} 
+  )
+}
+// 3. Pass the `theme` prop to the `NativeBaseProvider`
+export default gdTheme 
+ 

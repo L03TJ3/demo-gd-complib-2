@@ -1,16 +1,15 @@
-import React, { ReactNode } from 'react';
-import GdThemeProvider from './theme/gdThemeProvider'
-import gdButton from './src/components/button'
+import React, { ReactNode } from 'react'
+import GdButton from './src/components/button/gdButton'
 
 export type BaseUiPackageProps = {
   /**
    * a node to be rendered in the special component.
    */
-  children?: ReactNode;
+  children?: JSX.Element;
 };
 
-export function BaseUiPackage({ children }: BaseUiPackageProps) {
-  return (
-    <GdThemeProvider childComponent={gdButton} />
-  );
+export function BaseUiPackage() {
+ return (
+    <GdButton />
+  )
 }

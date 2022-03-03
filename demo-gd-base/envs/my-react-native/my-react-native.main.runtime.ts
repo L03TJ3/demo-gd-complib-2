@@ -26,10 +26,6 @@ export class MyReactNativeMain {
 
   static async provider([reactNative, envs]: [ReactNativeMain, EnvsMain]) {
     const templatesReactNativeEnv = envs.compose(reactNative.reactNativeEnv, [
-      /**
-       * Uncomment to override the config files for TypeScript, Webpack or Jest
-       * Your config gets merged with the defaults
-       */
 
       reactNative.useTypescript(tsConfig),
       reactNative.useWebpack({

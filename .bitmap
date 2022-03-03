@@ -39,5 +39,11 @@
         "mainFile": "index.ts",
         "rootDir": "demo-gd-base/envs/my-react-native-web"
     },
+    "envs/new-react-native-extended": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "demo-gd-base/envs/new-react-native-extended"
+    },
     "$schema-version": "14.9.0"
 }

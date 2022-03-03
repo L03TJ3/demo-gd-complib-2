@@ -17,8 +17,10 @@ const webpackConfig = require('./webpack.config.js')
     config.addAliases({
       react: require.resolve('react'),
       'react-dom/server': require.resolve('react-dom/server'),
-      'react-native': require.resolve('react-native'),
+      'react-native': require.resolve('react-native')
     });
+
+    console.log('commonTransformation --> config -->', config)
     return config;
   }
 
@@ -33,7 +35,9 @@ const webpackConfig = require('./webpack.config.js')
     context: WebpackConfigTransformContext
   ) => {
     const newConfig = commonTransformation(config, context);
+    console.log('config preview -->', newConfig)
     return newConfig;
+
   };
 
   /**

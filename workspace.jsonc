@@ -43,7 +43,9 @@
       "dependencies": {
         "@babel/core": "7.17.5",
         "@babel/preset-env": "7.16.11",
+        "@babel/preset-flow": "7.16.7",
         "@babel/preset-react": "7.16.7",
+        "@babel/preset-typescript": "7.16.7",
         "@babel/runtime": "^7.12.5",
         "@bit/bit.envs.compilers.react-native-typescript": "0.0.5",
         "@teambit/dependencies.modules.packages-excluder": "0.0.53",
@@ -92,16 +94,19 @@
    * see https://harmony-docs.bit.dev/aspects/variants for more info.
    **/
   "teambit.workspace/variants": {
-    "{envs/my-react-native}, {envs/my-react-native-web}": {
+    "{envs/my-react-native}, {envs/my-react-native-web}, {envs/new-react-native-extended}": {
       "teambit.harmony/aspect": {}
     },
     "{blocks/**}, {pages/**}, {themes/**}": {
       "lewisb.demo-gd-base/envs/my-react-native": {}
     },
-    "{core/ui/modal}, {core/base-ui-package}": {
+    "{core/base-ui-package}": {
+      "lewisb.demo-gd-base/envs/new-react-native-extended": {}
+    },
+    "{core/ui/modal}": {
       "lewisb.demo-gd-base/envs/my-react-native-web": {}
     },
-    "{core/ui/button}, {core/base-ui-package}": {
+    "{core/ui/button}": {
       "teambit.react/react": {}
     },
     "*": {
@@ -109,6 +114,14 @@
         "policy": {
           "devDependencies": {
             "babel-jest": "27.5.1",
+            "@babel/core": "7.17.5",
+            "@babel/preset-env": "7.16.11",
+            "@babel/preset-flow": "7.16.7",
+            "@babel/preset-react": "7.16.7",
+            "@babel/preset-typescript": "7.16.7",
+            "@babel/plugin-proposal-class-properties": "7.10.4",
+            "@babel/plugin-transform-runtime": "7.17.0",
+            "@babel/plugin-proposal-export-default-from": "7.16.7",
             "eslint-import-resolver-node": "0.3.6",
             "eslint-plugin-import": "2.22.1",
             "eslint-plugin-jest": "24.4.0",
@@ -121,7 +134,8 @@
             "react-native-web": "0.16.0",
             "react-native-safe-area-context": "4.0.1",
             "react-native-svg": "12.2.0",
-            "react-test-renderer": "^17.0.2"
+            "react-test-renderer": "^17.0.2",
+            "workbox-webpack-plugin": "6.5.0"
           }
         }
       }
